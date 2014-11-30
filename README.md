@@ -1,4 +1,5 @@
 Ingy
+<<<<<<< HEAD
 ================
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
@@ -48,3 +49,6 @@ Credits
 
 License
 -------
+=======
+====
+>>>>>>> d08317dbecbf9af821f3440bf82d8ae676bddbe1
