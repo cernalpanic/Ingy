@@ -1,0 +1,14 @@
+.page-header
+  = link_to math_ladders_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_math_ladder_path(@math_ladder), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show math_ladder
+
+%dl.dl-horizontal
+  %dt Number:
+  %dd= @math_ladder.number
+  %dt User:
+  %dd= @math_ladder.user

@@ -50,3 +50,7 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+
+gem 'bootstrap-generators', '~> 3.3.1'
+

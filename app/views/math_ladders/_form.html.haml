@@ -1,0 +1,20 @@
+= form_for @math_ladder, :html => { :class => "form-horizontal", :role => "form" } do |f|
+  -if @math_ladder.errors.any?
+    .alert.alert-danger.alert-dismissable{:role => "alert"}
+      %button.close{:type => "button", :data => {:dismiss => "alert"} }
+        span{:aria => {:hidden => "true"} } &times;
+        span.sr-only Close
+      %h4= "#{pluralize(@math_ladder.errors.count, "error")} prohibited this math_ladder from being saved:"
+
+      %ul
+        - @math_ladder.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :number, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :number, :class => 'form-control'
+      = f.hidden_field :user, :value => "#{current_user.id}"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'

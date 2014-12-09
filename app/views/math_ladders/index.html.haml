@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_math_ladder_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Math ladder
+  %h1 Listing math_ladders
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Number
+        %th User
+        %th
+        %th
+        %th
+
+    %tbody
+      - @math_ladders.each do |math_ladder|
+        %tr
+          %td= math_ladder.number
+          %td= math_ladder.user
+          %td= link_to 'Show', math_ladder
+          %td= link_to 'Edit', edit_math_ladder_path(math_ladder)
+          %td= link_to 'Destroy', math_ladder, :data => { confirm: 'Are you sure?' }, :method => :delete
