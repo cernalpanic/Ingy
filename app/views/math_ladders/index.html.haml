@@ -4,6 +4,146 @@
     New Math ladder
   %h1 Listing math_ladders
 
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
+.row
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.square
+  .col-md-1.hide
+  .col-md-1.hide
+
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
@@ -15,14 +155,21 @@
         %th
 
     %tbody
-      - @math_ladders.each do |math_ladder|
-        %tr
-          %td.value= math_ladder.number
-          %td= "#{User.find(math_ladder.user_id).name}"
-          %td= link_to 'Show', math_ladder
-          %td= link_to 'Edit', edit_math_ladder_path(math_ladder)
-          %td= link_to 'Destroy', math_ladder, :data => { confirm: 'Are you sure?' }, :method => :delete
+      %tr
+        %td.value= @math_ladder.number
+        %td= @user_name
+        %td= link_to 'Show', @math_ladder
+        %td= link_to 'Edit', edit_math_ladder_path(@math_ladder)
+        %td= link_to 'Destroy', @math_ladder, :data => { confirm: 'Are you sure?' }, :method => :delete
 :javascript
   $(document).ready(function() {
-    console.log($('.value').text());
+    var i = 0,
+        num = $('.value').text();
+
+    $('.square').each(function() {
+      if (i < num) {
+        $(this).css('background-color', 'green');
+      }
+      i = i + 1;
+    });
   });
