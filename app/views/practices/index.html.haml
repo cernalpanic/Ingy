@@ -1,0 +1,30 @@
+.page-header
+  = link_to new_practice_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Practice
+  %h1 Listing practices
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Start time
+        %th End time
+        %th Instrument
+        %th User
+        %th Notes
+        %th
+        %th
+        %th
+
+    %tbody
+      - @practices.each do |practice|
+        %tr
+          %td= practice.start_time
+          %td= practice.end_time
+          %td= practice.instrument
+          %td= practice.user
+          %td= practice.notes
+          %td= link_to 'Show', practice
+          %td= link_to 'Edit', edit_practice_path(practice)
+          %td= link_to 'Destroy', practice, :data => { confirm: 'Are you sure?' }, :method => :delete

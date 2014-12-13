@@ -1,0 +1,20 @@
+.page-header
+  = link_to practices_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_practice_path(@practice), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show practice
+
+%dl.dl-horizontal
+  %dt Start time:
+  %dd= @practice.start_time
+  %dt End time:
+  %dd= @practice.end_time
+  %dt Instrument:
+  %dd= @practice.instrument
+  %dt User:
+  %dd= @practice.user
+  %dt Notes:
+  %dd= @practice.notes

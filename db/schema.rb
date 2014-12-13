@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209004542) do
+ActiveRecord::Schema.define(version: 20141213032110) do
+
+  create_table "instruments", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "math_ladders", force: true do |t|
     t.integer  "number"
@@ -21,6 +27,19 @@ ActiveRecord::Schema.define(version: 20141209004542) do
   end
 
   add_index "math_ladders", ["user_id"], name: "index_math_ladders_on_user_id"
+
+  create_table "practices", force: true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "instrument_id"
+    t.integer  "user_id"
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "practices", ["instrument_id"], name: "index_practices_on_instrument_id"
+  add_index "practices", ["user_id"], name: "index_practices_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

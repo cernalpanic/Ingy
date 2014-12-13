@@ -28,9 +28,7 @@ class MathLaddersController < ApplicationController
   end
 
   def update
-    Rails.logger.info "TORD #{params.inspect}"
     flash[:notice] = 'MathLadder was successfully updated.' if @math_ladder.update(math_ladder_params)
-    #respond_with(@math_ladder)
     render :template => '/math_ladders/update.js'
   end
 
