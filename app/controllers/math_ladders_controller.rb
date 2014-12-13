@@ -4,9 +4,9 @@ class MathLaddersController < ApplicationController
   respond_to :html
 
   def index
-    @math_ladder = MathLadder.all
-    @user_name = User.find(@math_ladder.user_id).name
-    respond_with(@math_ladder)
+    @math_ladders = MathLadder.all
+    #@user_name = User.find(@math_ladder.user_id).name
+    respond_with(@math_ladders)
   end
 
   def show
