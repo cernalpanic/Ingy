@@ -15,5 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require timer.jquery.js
+//= require timer.js
 //= require_tree .

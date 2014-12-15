@@ -1,3 +1,8 @@
+
+#timer
+  .start.btn.btn-default Start
+  .timer
+  .end.btn.btn-default Pause
 .page-header
   = link_to practices_path, :class => 'btn btn-default' do
     %span.glyphicon.glyphicon-list-alt
@@ -5,3 +10,9 @@
   %h1 New practice
 
 = render 'form'
+
+:javascript
+  var $t = $('.timer');
+  $('.start').on('click', function() {
+    $('.timer').timer();
+  });
