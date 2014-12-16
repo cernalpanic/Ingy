@@ -227,6 +227,10 @@
     $el[display]('');
   }
 
+  function getTotal() {
+    return 10;
+  }
+
   // TIMER PROTOTYPE
   var Timer = function(element, userOptions) {
     var elementType;
@@ -271,6 +275,11 @@
 
     remove: function() {
       removeTimer();
+    },
+
+    total: function() {
+      return 10;
+      getTotal();
     }
   };
 

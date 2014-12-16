@@ -11,14 +11,6 @@
           %li= msg
 
   .form-group
-    = f.label :start_time, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.datetime_select :start_time, :class => 'form-control'
-  .form-group
-    = f.label :end_time, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.datetime_select :end_time, :class => 'form-control'
-  .form-group
     = f.label :instrument, :class => 'col-sm-2 control-label'
   .form-group
     .col-sm-10
@@ -29,4 +21,4 @@
       = f.text_field :notes, :class => 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
-      = f.submit :class => 'btn btn-primary'
+      = f.submit :class => 'submit btn btn-primary'

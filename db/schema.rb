@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213032110) do
+ActiveRecord::Schema.define(version: 20141216033019) do
 
   create_table "instruments", force: true do |t|
     t.string   "name"
@@ -29,13 +29,12 @@ ActiveRecord::Schema.define(version: 20141213032110) do
   add_index "math_ladders", ["user_id"], name: "index_math_ladders_on_user_id"
 
   create_table "practices", force: true do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
     t.integer  "instrument_id"
     t.integer  "user_id"
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "seconds_elapsed"
   end
 
   add_index "practices", ["instrument_id"], name: "index_practices_on_instrument_id"
