@@ -22,6 +22,7 @@ class PracticesController < ApplicationController
   end
 
   def create
+    Rails.logger.info "TORD #{p practice_params}"
     @practice = Practice.new(practice_params)
     @practice.user_id = @current_user
     @practice.save
@@ -44,6 +45,6 @@ class PracticesController < ApplicationController
     end
 
     def practice_params
-      params.require(:practice).permit(:start_time, :end_time, :instrument_id, :user_id, :notes)
+      params.require(:practice).permit(:seconds_elapsed, :instrument_id, :user_id, :notes)
     end
 end

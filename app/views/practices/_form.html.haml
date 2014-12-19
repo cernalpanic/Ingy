@@ -21,4 +21,5 @@
       = f.text_field :notes, :class => 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
+      = f.hidden_field :seconds_elapsed, :class => 'seconds-elapsed', :value => 0
       = f.submit :class => 'submit btn btn-primary'

@@ -8,8 +8,7 @@
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Start time
-        %th End time
+        %th Seconds Elapsed
         %th Instrument
         %th User
         %th Notes
@@ -20,8 +19,7 @@
     %tbody
       - @practices.each do |practice|
         %tr
-          %td= practice.start_time
-          %td= practice.end_time
+          %td= practice.seconds_elapsed
           %td= practice.instrument
           %td= practice.user
           %td= practice.notes

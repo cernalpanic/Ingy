@@ -151,12 +151,12 @@
       timeObj = sec2TimeObj(sec);
 
     if (timeObj.hours) {
-      time = timeObj.hours + ':' + timeObj.minutes + ':' + timeObj.seconds;
+      time = '<span class="hour">' + timeObj.hours + '</span>:<span class="min">' + timeObj.minutes + '</span>:<span class="sec">' + timeObj.seconds + '</span>';
     } else {
       if (timeObj.minutes) {
-        time = timeObj.minutes + ':' + timeObj.seconds + ' min';
+        time = '<span class="min">' + timeObj.minutes + '</span>:<span class="sec">' + timeObj.seconds + '</span> min';
       } else {
-        time = timeObj.seconds + ' sec';
+        time = '<span class="sec">' + timeObj.seconds + '</span> sec';
       }
     }
     return time;
