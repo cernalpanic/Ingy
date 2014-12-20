@@ -53,4 +53,6 @@ end
 
 
 gem 'bootstrap-generators', '~> 3.3.1'
+gem 'monologue'
+
 

@@ -19,8 +19,8 @@
     %tbody
       - @practices.each do |practice|
         %tr
-          %td= practice.seconds_elapsed
-          %td= practice.instrument
+          %td= distance_of_time_in_words practice.seconds_elapsed
+          %td= practice.instrument.name
           %td= practice.user
           %td= practice.notes
           %td= link_to 'Show', practice
