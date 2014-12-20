@@ -1,5 +1,6 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
+  <li><%= link_to 'Blog', 'blog' %></li>
   <li><%= link_to 'Math Ladder', math_ladders_path %></li>
   <li><%= link_to 'Practice', practices_path %></li>
   <li><%= link_to 'Instruments', instruments_path %></li>
@@ -10,6 +11,7 @@
   <li><%= link_to 'Sign up', new_user_registration_path %></li>
 <% end %>
 <% if user_signed_in? %>
+  <li><%= link_to 'Blog-Admin', 'blog/monologue' %></li>
   <% if current_user.admin? %>
     <li><%= link_to 'Admin', '/admin' %></li>
     <li><%= link_to 'Users', users_path %></li>
