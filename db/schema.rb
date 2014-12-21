@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220025921) do
+ActiveRecord::Schema.define(version: 20141221014711) do
 
   create_table "instruments", force: true do |t|
     t.string   "name"

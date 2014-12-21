@@ -11,8 +11,8 @@
   %dt Seconds elapsed:
   %td= distance_of_time_in_words @practice.seconds_elapsed, 0, {include_seconds: true}
   %dt Instrument:
-  %dd= @practice.instrument.name
+  %dd Instrument(practice.instrument_id).name
   %dt User:
-  %dd= @practice.user
+  %dd= @practice.user.name
   %dt Notes:
   %dd= @practice.notes

@@ -4,6 +4,7 @@ class PracticesController < ApplicationController
   respond_to :html
 
   def index
+    #@practices = current_user.practices
     @practices = Practice.all
     respond_with(@practices)
   end
@@ -22,9 +23,8 @@ class PracticesController < ApplicationController
   end
 
   def create
-    Rails.logger.info "TORD #{p practice_params}"
     @practice = Practice.new(practice_params)
-    @practice.user_id = @current_user
+    @practice.user_id = current_user.id
     @practice.save
     respond_with(@practice)
   end

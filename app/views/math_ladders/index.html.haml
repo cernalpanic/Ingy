@@ -14,9 +14,8 @@
         %th
 
     %tbody
-      - @math_ladders.each do |math_ladder|
-        %tr
-          %td= math_ladder.number
-          %td= link_to 'Show', math_ladder
-          %td= link_to 'Edit', edit_math_ladder_path(math_ladder)
-          %td= link_to 'Destroy', math_ladder, :data => { confirm: 'Are you sure?' }, :method => :delete
+      %tr
+        %td= @math_ladder.number
+        %td= link_to 'Show', @math_ladder
+        %td= link_to 'Edit', edit_math_ladder_path(@math_ladder)
+        %td= link_to 'Destroy', @math_ladder, :data => { confirm: 'Are you sure?' }, :method => :delete
