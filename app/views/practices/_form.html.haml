@@ -18,7 +18,7 @@
   .form-group
     = f.label :notes, :class => 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :notes, :class => 'form-control'
+      = f.text_area :notes, :class => 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.hidden_field :seconds_elapsed, :class => 'seconds-elapsed', :value => 0
