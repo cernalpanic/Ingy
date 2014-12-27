@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/cernalpanic/monologue/
+  revision: f9121c29c1ea40606e76f548273df7c9f0874475
+  specs:
+    monologue (0.4.1)
+      bcrypt (~> 3.1.7)
+      ckeditor (~> 4.0.11)
+      coffee-rails (~> 4.0.0)
+      jquery-rails
+      rails (>= 4.0.4)
+      sass-rails (~> 4.0.0)
+      select2-rails (~> 3.2)
+      truncate_html
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -141,15 +155,6 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.4.3)
-    monologue (0.4.1)
-      bcrypt (~> 3.1.7)
-      ckeditor (~> 4.0.11)
-      coffee-rails (~> 4.0.0)
-      jquery-rails
-      rails (>= 4.0.4)
-      sass-rails (~> 4.0.0)
-      select2-rails (~> 3.2)
-      truncate_html
     multi_json (1.10.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
@@ -318,7 +323,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
-  monologue
+  monologue!
   pg
   pry-rails
   pry-rescue

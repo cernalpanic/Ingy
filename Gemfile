@@ -53,6 +53,6 @@ end
 
 
 gem 'bootstrap-generators', '~> 3.3.1'
-gem 'monologue'
+gem 'monologue', :git => 'https://github.com/cernalpanic/monologue/'
 
 
