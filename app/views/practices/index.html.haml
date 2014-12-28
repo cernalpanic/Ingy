@@ -20,7 +20,7 @@
       - @practices.each do |practice|
         %tr
           %td= distance_of_time_in_words practice.seconds_elapsed, 0, {include_seconds: true}
-          %td= Instrument.find(practice.instrument_id).name
+          %td= Instrument.find(practice.instrument_id).name rescue '(No Instrument)'
           %td= practice.user.name
           %td= practice.notes
           %td= link_to 'Show', practice
