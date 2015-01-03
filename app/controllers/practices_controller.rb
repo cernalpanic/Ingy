@@ -4,8 +4,7 @@ class PracticesController < ApplicationController
   respond_to :html
 
   def index
-    #@practices = current_user.practices
-    @practices = Practice.all
+    @practices = current_user.practices
     respond_with(@practices)
   end
 
@@ -15,7 +14,7 @@ class PracticesController < ApplicationController
 
   def new
     @practice = Practice.new
-    @instruments = Instrument.all
+    @lnstruments = Instrument.all
     respond_with(@practice)
   end
 
