@@ -69,6 +69,7 @@
   function render() {
     $el[display](secondsToTime(totalSeconds));
     $el.data('seconds', totalSeconds);
+    $('.total').text(totalSeconds);
   }
 
   function makeEditable() {
@@ -151,12 +152,12 @@
       timeObj = sec2TimeObj(sec);
 
     if (timeObj.hours) {
-      time = '<span class="hour">' + timeObj.hours + '</span>:<span class="min">' + timeObj.minutes + '</span>:<span class="sec">' + timeObj.seconds + '</span>';
+      time = timeObj.hours + ':' + timeObj.minutes + ':' + timeObj.seconds;
     } else {
       if (timeObj.minutes) {
-        time = '<span class="min">' + timeObj.minutes + '</span>:<span class="sec">' + timeObj.seconds + '</span> min';
+        time = timeObj.minutes + ':' + timeObj.seconds + ' min';
       } else {
-        time = '<span class="sec">' + timeObj.seconds + '</span> sec';
+        time = timeObj.seconds + ' sec';
       }
     }
     return time;
@@ -227,10 +228,6 @@
     $el[display]('');
   }
 
-  function getTotal() {
-    return 10;
-  }
-
   // TIMER PROTOTYPE
   var Timer = function(element, userOptions) {
     var elementType;
@@ -275,12 +272,8 @@
 
     remove: function() {
       removeTimer();
-    },
-
-    total: function() {
-      return 10;
-      getTotal();
     }
+
   };
 
   // INITIALIZE THE PLUGIN

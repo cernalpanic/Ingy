@@ -5,6 +5,7 @@
   .timer-controls
     .start.btn.btn-success Start
     .end.btn.btn-danger Pause
+    .total.hide
 .page-header
   = link_to practices_path, :class => 'btn btn-default' do
     %span.glyphicon.glyphicon-list-alt
@@ -15,14 +16,8 @@
 
 :javascript
   var $t = $('.timer');
-  $('.start').on('click', function() { $('.timer').timer(); });
-  $('.end').on('click', function() { $('.timer').timer('pause'); });
-  $('.submit').on('click', function(e) {
-    var sec = Number($('.sec').text()),
-        min = Number($('.min').text()),
-        hour = Number($('.hour').text());
-
-    sec + (min * 60);
-    sec + (hour * 60 * 60);
-    $('.seconds-elapsed').val(sec);
+  $('.start').on('click', function() { $t.timer(); });
+  $('.end').on('click', function() { $t.timer('pause'); });
+  $('.submit').on('click', function() {
+    $('.seconds-elapsed').val($('.total').text());
   });
