@@ -15,11 +15,14 @@
   .form-group
     .col-sm-10
       = f.collection_select(:instrument_id,  Instrument.all, :id, :name, :include_blank => "Select an Instrument" )
+  .form-group.seconds
+    = f.label :seconds_elapsed, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :seconds_elapsed, :class => 'seconds-elapsed form-control'
   .form-group
     = f.label :notes, :class => 'col-sm-2 control-label'
     .col-sm-10
       = f.text_area :notes, :class => 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
-      = f.hidden_field :seconds_elapsed, :class => 'seconds-elapsed', :value => 0
       = f.submit :class => 'submit btn btn-primary'

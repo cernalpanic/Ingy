@@ -9,10 +9,10 @@
 
 %dl.dl-horizontal
   %dt Seconds elapsed:
-  %td= distance_of_time_in_words @practice.seconds_elapsed, 0, {include_seconds: true}
+  %td= distance_of_time_in_words @practice.seconds_elapsed, 0, {include_seconds: true} rescue 'no time recorded'
   %dt Instrument:
-  %dd= Instrument.find(@practice.instrument_id).name
+  %dd= Instrument.find(@practice.instrument_id).name rescue 'no instrument'
   %dt User:
-  %dd= @practice.user.name
+  %dd= @practice.user.name rescue 'no name'
   %dt Notes:
-  %dd= @practice.notes
+  %dd= @practice.notes rescue 'no notes'

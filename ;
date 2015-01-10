@@ -19,14 +19,14 @@
 
     %tbody
       - @practices.each do |practice|
-        %tr{:practice_id => practice.id}
+        %tr
           %td= practice.created_at.to_formatted_s(:long)
           %td= distance_of_time_in_words practice.seconds_elapsed, 0, {include_seconds: true} rescue 'no time recorded'
           %td= Instrument.find(practice.instrument_id).name rescue '(No Instrument)'
           %td= practice.user.name rescue 'no name'
-          - if practice.notes.size > 0
-            %td
-              %span.glyphicon.glyphicon-ok
+          - if !"".include? practice.notes
+            %td{:data-id=> practice.id}
+              .btn.btn-primary.notes-button Notes
           - else
             %td
           %td= link_to 'Show', practice
@@ -35,5 +35,5 @@
 
 :javascript
   $('.notes-button').on('click', function() {
-    alert("<%= Practice.find(" + $(this).closest('tr').attr('practice_id') + ") %>");
+    alert($(this).text("<% ));
   });

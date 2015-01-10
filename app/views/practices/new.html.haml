@@ -16,6 +16,7 @@
 
 :javascript
   var $t = $('.timer');
+  $('.seconds').hide();
   $('.start').on('click', function() { $t.timer(); });
   $('.end').on('click', function() { $t.timer('pause'); });
   $('.submit').on('click', function() {
