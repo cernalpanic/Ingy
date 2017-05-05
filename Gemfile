@@ -1,3 +1,4 @@
+# just a commit
 source 'https://rubygems.org'
 ruby '2.1.5'
 gem 'rails', '4.1.8'
@@ -17,7 +18,7 @@ gem 'high_voltage'
 gem 'pundit'
 gem 'simple_form'
 gem 'upmin-admin'
-gem 'rollbar'
+gem 'rollbar', '~> 2.14', '>= 2.14.1'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -54,6 +55,6 @@ end
 
 
 gem 'bootstrap-generators', '~> 3.3.1'
-gem 'monologue', :git => 'https://github.com/cernalpanic/monologue/'
+gem 'monologue'
 
 
